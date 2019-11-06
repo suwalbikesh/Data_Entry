@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
     private String gender;
     private int image;
+    final List<Datas> datasList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +112,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     etAge.setError("please enter Age");
                 }
                 else {
-                    List<Datas> datasList = new ArrayList<>();
                     datasList.add(new Datas(etName.getText().toString(), etAge.getText().toString(), gender, image));
                     DatasAdapter datasAdapter = new DatasAdapter(this, datasList);
                     rcvData.setAdapter(datasAdapter);
